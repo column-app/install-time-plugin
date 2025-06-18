@@ -1,23 +1,18 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(InstallTimePlugin)
-public class InstallTimePlugin: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "InstallTimePlugin"
-    public let jsName = "InstallTime"
-    public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
-    ]
-    private let implementation = InstallTime()
-
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+public class InstallTimePlugin: CAPPlugin {
+    @objc func getInstallTime(_ call: CAPPluginCall) {
+        if let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last,
+           let attrs = try? FileManager.default.attributesOfItem(atPath: documentsUrl.path),
+           let creationDate = attrs[.creationDate] as? Date {
+            let timestamp = creationDate.timeIntervalSince1970 * 1000 // milliseconds
+            call.resolve([
+                "installTime": timestamp
+            ])
+        } else {
+            call.reject("Failed to get install time")
+        }
     }
 }
