@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@capacitor/core": "latest",
-    "install-time": "file:..",
+    "@column-news/install-time-plugin": "latest",
     "@capacitor/ios": "7.0.0",
     "@capacitor/android": "7.0.0"
   },

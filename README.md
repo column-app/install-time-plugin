@@ -5,7 +5,7 @@ Capacitor plugin to get installation time of the app
 ## Install
 
 ```bash
-npm install install-time
+npm install @column-news/install-time-plugin
 npx cap sync
 ```
 
