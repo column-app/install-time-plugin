@@ -1,5 +1,5 @@
 {
-  "name": "install-time",
+  "name": "@column-news/install-time-plugin",
   "version": "0.0.1",
   "description": "Capacitor plugin to get installation time of the app",
   "main": "dist/plugin.cjs.js",
