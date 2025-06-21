@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "InstallTime",
+    name: "InstallTimePlugin",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "InstallTime",
+            name: "InstallTimePlugin",
             targets: ["InstallTimePlugin"])
     ],
     dependencies: [
