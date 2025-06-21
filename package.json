@@ -1,6 +1,6 @@
 {
   "name": "@column-news/install-time-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Capacitor plugin to get installation time of the app",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -13,7 +13,7 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "InstallTimePlugin.podspec"
+    "ColumnNewsInstallTimePlugin.podspec"
   ],
   "author": "Andrea La Grotteria",
   "license": "MIT",
